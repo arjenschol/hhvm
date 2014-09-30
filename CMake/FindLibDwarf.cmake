@@ -20,7 +20,6 @@ find_path (DWARF_INCLUDE_DIR
   NAMES
     libdwarf.h dwarf.h
   PATHS
-    /usr/include
     /usr/include/libdwarf
     /usr/local/include
     /usr/local/include/libdwarf
@@ -97,6 +96,8 @@ if (LIBDWARF_LIBRARIES AND LIBDWARF_INCLUDE_DIRS)
 	"0, dwarfCallback, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr" 0)
   CHECK_LIBDWARF_INIT("dwarf_producer_init_c" "0, dwarfCallback, nullptr, nullptr, nullptr, nullptr" 1)
 endif()
+
+set(LIBDWARF_CONST_NAME 1)
 
 if(LIBDWARF_CONST_NAME)
   message(STATUS "libdwarf uses const char* type")
